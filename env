@@ -1,0 +1,4 @@
+SECRET_KEY = this-really-needs-to-be-changed
+PASSWORD_HASH = pbkdf2_sha512
+PASSWORD_SALT = ATGUOHAELKiubahiughaerGOJAEGj
+DB = driver://user:pass@localhost/dbname

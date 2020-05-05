@@ -51,23 +51,7 @@ def create_app(config_filename, debug):
     admin.add_view(UserModelView(User, db.session, name='Users'))
     admin.add_view(RoleModelView(Role, db.session, name="Roles"))
     admin.add_view(CustomView(name="Custom view", endpoint='custom'))
-
-    # Create the tables for the users and roles and add a user to the user table
-    # This decorator registers a function to be run before the first request to the app
-    #  i.e. calling localhost:5000 from the browser
-
-    '''
-    @app.before_first_request
-    def create_user():
-        db.drop_all()
-        db.create_all()
-        user_datastore.create_user(email='admin',
-                                   username='admin',
-                                   first_name='Nicos',
-                                   last_name='Efstathiou',
-                                   password='admin')
-        db.session.commit()
-    '''
+    
     # define a context processor for merging flask-admin's template context into the
     # flask-security views.
     @security.context_processor
